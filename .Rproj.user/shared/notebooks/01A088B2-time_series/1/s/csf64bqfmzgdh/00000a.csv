@@ -1,0 +1,1 @@
+"0","plot(c02.residuals ~ time(co2_data), xlim=c(1960, 1962), main=""Zoomed in Residuals on Time - Two Years"",pch = 20, col = ""blue"")"

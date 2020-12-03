@@ -1,0 +1,7 @@
+"0","###################################"
+"0","# Plotting TS data"
+"0","###################################"
+"0","# Creating a TS Linear Model"
+"0","par(mfrow=c(1,1))"
+"0","co2.linear.model = lm(co2_data ~ time(co2_data) )"
+"0","plot(co2, ylab = expression(CO[2] ~ (ppm)), main = ""Mauna Loa Carbon Dioxide"")"

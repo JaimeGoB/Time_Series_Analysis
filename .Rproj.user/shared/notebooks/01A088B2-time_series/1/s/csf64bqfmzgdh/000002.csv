@@ -1,0 +1,8 @@
+"0","###################################"
+"0","# Residual Analysis"
+"0","###################################"
+"0","par(mfrow=c(2,2))"
+"0","# fitting residuals for data"
+"0","c02.residuals = resid( co2.linear.model )"
+"0","# Residuals seem to follow a normal distribution"
+"0","hist(c02.residuals, main= ""Histogram of CO2 Residuals"", col = ""red"") "

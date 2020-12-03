@@ -1,0 +1,4 @@
+"0","# quantile plot - there is systematic deviation from "
+"0","# normality in the tails of the qqplot"
+"0","# residuals are not exactly normaly distributed."
+"0","qqnorm(c02.residuals, main= ""Normal Probability Plot"") "

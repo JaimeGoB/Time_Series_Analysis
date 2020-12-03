@@ -1,0 +1,84 @@
+---
+title: "Time Series Coal Dataset"
+author: "JaimeGoB"
+date: "12/3/2020"
+output: html_document
+---
+
+```{r echo=FALSE, include=FALSE}
+# Libraries
+library(ggplot2)
+library(dplyr)
+library(hrbrthemes)
+```
+
+## Coal Dataset
+
+Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale.
+
+```{r echo=FALSE, include=TRUE}
+###################################
+# Importing co2 time series dataset
+###################################
+co2_data <- co2
+
+###################################
+# Viewing information regardint the dataset
+# Atmospheric concentrations of CO2 are expressed in parts per million (ppm)
+# From 59 ~ 97
+###################################
+help(co2)
+```
+
+### Plotting Coal Dataset Years 59 ~ 97
+```{r echo=FALSE, include=TRUE}
+###################################
+# Plotting TS data
+###################################
+# Creating a TS Linear Model
+par(mfrow=c(1,1))
+co2.linear.model = lm(co2_data ~ time(co2_data) )
+plot(co2, ylab = expression(CO[2] ~ (ppm)), main = "Mauna Loa Carbon Dioxide")
+abline(co2.linear.model, col = "red")
+legend("bottomright", legend = "Line of best fit",
+       col= "red", lty=1) #lty 1 is full line
+```
+
+## Residual Analysis
+```{r echo=FALSE, include=TRUE}
+###################################
+# Residual Analysis
+###################################
+par(mfrow=c(1,2))
+# fitting residuals for data
+c02.residuals = resid( co2.linear.model )
+hist(c02.residuals, main= "Histogram of CO2 Residuals", col = "red") 
+# plotting qqplot
+qqnorm(c02.residuals, main= "Normal Probability Plot") 
+qqline(c02.residuals, col = "red")
+```
+
+#### Histogram 
+Residuals seem to follow a normal distribution.
+
+#### QQplot
+There is systematic deviation from  normality in the tails of the qqplot, residuals are not exactly normaly distributed.
+
+```{r echo=FALSE, include=TRUE}
+# time plot of residuals - obvious structure in the time plot 
+# violating assumptions
+par(mfrow=c(1,2))
+plot(c02.residuals ~ time(co2_data), main="Residuals on Time",pch = 20, col = "blue")
+plot(c02.residuals ~ time(co2_data), xlim=c(1960, 1962), main="Zoomed in Residuals - Two Years",pch = 20, col = "blue")
+par(mfrow=c(1,1))
+```
+
+#### Residual Plots over Time
+The residual plot on the left clearly shows a U-shaped pattern. Thus vioaliting the normality assumptions. 
+
+The residual plot on the right, has been zoomed to two years. The zig-zag pattern can be seen once the time frame is shorter.
+
+
+
+
+

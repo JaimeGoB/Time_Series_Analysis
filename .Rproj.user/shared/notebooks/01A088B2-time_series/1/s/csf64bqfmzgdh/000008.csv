@@ -1,0 +1,3 @@
+"0","# time plot of residuals - obvious structure in the time plot "
+"0","# violating assumptions"
+"0","plot(c02.residuals ~ time(co2_data), main=""Residuals on Time"",pch = 20, col = ""blue"")"
