@@ -4,12 +4,7 @@
 ## Coal Dataset
 Atmospheric concentrations of CO2 are expressed in parts per million (ppm) and reported in the preliminary 1997 SIO manometric mole fraction scale.
 
-## Plotting Coal Dataset Years 59 ~ 97
-
 <img src="https://github.com/JaimeGoB/Time_Series_Analysis/blob/main/data/plot.png" length = 600 width="600"/>
-
-
-
 
 
 ### Residual Analysis
